@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload an Image</title>
+</head>
+<body>
+
+  <label for="input"> Choose a Input type:</label><br><br>
+  <h1>Upload an Image</h1>
+<form action="/uploadfile/" method="post" enctype="multipart/form-data">
+  <label for="image">Select an image to upload:</label><br>
+  <input type="file" id="image" name="file"><br>
+  <input type="submit" value="Upload">
+</form>
+<h1>Detection Result:</h1>
+{% if file_name %}
+  <h2>file name: {{ file_name }}</h2>
+  <h2>Number_plate/s: {{ result }}</h2>
+  <h2>Number_of_plate: {{ n }}</h2>
+  <img src="{{ url_for('static', path=file_name) }}" alt="uploaded image"width="1000" height="600">
+{% endif %}
+
+
+
+<br><br><br><br>
+<br><br><br><br><br><br><br><br>
+
+
+<h1>Upload a Video</h1>
+<form action="/uploadvideo/" method="post" enctype="multipart/form-data">
+<label for="video">Select an video to upload:</label><br>
+<input type="file" id="video" name="file"><br>
+<input type="submit" value="Upload">
+</form>
+<h1>Detection Result:</h1>
+{% if file_name2 %}
+<h2>file name: {{ file_name2 }}</h2>
+
+<h2>Number_plate/s: {{ result2 }}</h2>
+<h2>Number_of_plate: {{ n2 }}</h2>
+
+<h3>Number_of_frames_in_video: {{ total_frames }}</h3>
+<h3>Video Frames Per Second: {{ fps }}</h3>
+<video id="myVideo" width="640" height="480" controls autoplay>
+  <source src="/static_vid/{{ file_name2 }}" type="video/mp4">
+</video>
+{% endif %} 
+
+
+<br><br><br><br>
+<br><br><br><br><br><br><br><br>
+<h1>Access Webcam</h1>
+<form action="/accessvideo/" method="post" enctype="multipart/form-data">
+<label for="video">Click below to Access Webcam:</label><br>
+
+<input type="submit" value="Start System's webcam-0">
+</form>
+<h1>Detection Result:</h1>
+{% if file_name3 %}
+<h2>file name: {{ file_name3 }}</h2>
+<h2>Number_plate/s: {{ result3 }}</h2>
+<h2>Number_of_plate: {{ n3 }}</h2>
+<video id="myVideo" width="640" height="480" controls autoplay>
+  <source src="/static_vid/{{ file_name3 }}" type="video/mp4">
+</video>
+{% endif %} 
+
+
+ 
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Original code::::::::::::::::
+
+<h1>Upload an Image</h1>
+<form action="/uploadfile/" method="post" enctype="multipart/form-data">
+  <label for="image">Select an image to upload:</label><br>
+  <input type="file" id="image" name="file"><br>
+  <input type="submit" value="Upload">
+</form>
+<h1>Detection Result:</h1>
+{% if file_name %}
+  <h2>file name: {{ file_name }}</h2>
+  <h2>Number_plate/s: {{ result }}</h2>
+  <h2>Number_of_plate: {{ n }}</h2>
+  <img src="{{ url_for('static', path=file_name) }}" alt="uploaded image"width="1000" height="600">
+{% endif %} 
+
+-->

@@ -1,0 +1,8 @@
+train: /content/drive/MyDrive/License_plate_detection/dataset/Vehicle-Number_plate_Detection.v1-v1.yolov5pytorch/test/images
+val: /content/drive/MyDrive/License_plate_detection/dataset/Vehicle-Number_plate_Detection.v1-v1.yolov5pytorch/valid/images
+
+nc: 1
+
+names: ['license_plate']
+
+weights: /content/drive/MyDrive/License_plate_detection/yolov5/runs/train/exp/weights/last.pt
